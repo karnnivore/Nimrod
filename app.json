@@ -1,0 +1,12 @@
+{
+  "name": "Nimrod",
+  "displayName": "Nimrod",
+  "expo": {
+    "name": "Nimrod",
+    "slug": "Nimrod",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
