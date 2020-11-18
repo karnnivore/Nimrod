@@ -11,28 +11,23 @@ import {
 //get navigation property and pass to Home function
 export default function Home({ navigation }) {
 
-    const pressHandler = () => {
-        //navigation.navigate('ReviewDetails')
-        navigation.push('ReviewDetails')
+    const questsHandler = () => {
+        navigation.navigate('Quests')
+    }
+
+    const activityHandler = () => {
+        navigation.navigate('ActivityFeed')
+    }
+    const mapHandler = () => {
+        navigation.navigate('Map')
     }
 
     return (
       <View style={styles.regForm}>
-          <Text style={styles.header}>Home Screen</Text>
-          <TextInput style={styles.textInput} placeholder="Your Name"
-          underlineColorAndroid={'transparent'}/>
-          
-          <TextInput style={styles.textInput} placeholder="Your Email"
-          underlineColorAndroid={'transparent'}/>
 
-          <TextInput style={styles.textInput} placeholder="Password"
-          secureTextEntry={true} underlineColorAndroid={'transparent'}/>
-
-          <TouchableOpacity style={styles.button}>
-              <Text style={styles.btntext}>Sign Up!</Text>
-          </TouchableOpacity>
-
-          <Button title='go to review dets' onPress={pressHandler}/>
+          <Button title='go to Quests Page' onPress={questsHandler}/>
+          <Button title='go to Activity Page' onPress={activityHandler}/>
+          <Button title='go to Map Page' onPress={mapHandler}/>
       </View>
     )
 }

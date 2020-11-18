@@ -3,19 +3,20 @@ import {
     StyleSheet, 
     Text, 
     View,
+    Button
 } from 'react-native';
 
 //get navigation property and pass to Home function
 export default function ActivityFeed({ navigation }) {
 
     const pressHandler = () => {
-        //navigation.navigate('ReviewDetails')
-        navigation.push('ReviewDetails')
+        navigation.goBack()
     }
 
     return (
       <View>
-          <Text>Quests</Text>
+          <Text>Activity Feed</Text>
+          <Button title='back to home screen' onPress={ pressHandler }/>
       </View>
     )
 }
