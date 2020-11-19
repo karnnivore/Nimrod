@@ -5,22 +5,26 @@ import {
     View,
     Button
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 //get navigation property and pass to Home function
-export default function Quests({ navigation }) {
-
-    const pressHandler = () => {
-        navigation.goBack();
-    }
-
+export default function Quests() {
     return (
       <View>
           <Text>Quests Page</Text>
-          <Button title='back to home screen' onPress={ pressHandler }/>
       </View>
     )
 }
 
+Quests.navigationOptions = {
+    tabBarIcon:({tintColor, focused})=> (
+        <Icon
+            name={'md-bookmarks'}
+            color={tintColor}
+            size={25}
+        />
+    )
+}
 
 const styles = StyleSheet.create({
 });
