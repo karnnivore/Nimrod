@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function Map() {
     return (
-        <View style={styles.regForm}>
+        <View>
             <Text style={styles.header}>Map Page</Text>
         </View>
     )
