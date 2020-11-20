@@ -11,30 +11,42 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 //get navigation property and pass to Home function
 export default function Home() {
+    const [value, onChangeText] = React.useState('Search...')
+
     return (
-      <View style={styles.container}>
-          <Text style={styles.header}>My Profile</Text>
-          <View style={styles.center}>
+      <View>
+          <View style={styles.headerContainer}>
+            <Text style={styles.headerText}>My Profile</Text>
+            <Icon name={'md-person'} color={'black'} size={50} style={styles.icon}/>
+          </View>
+          <View style={styles.user}>
             <Icon 
                 name={'md-person'}
                 color={'black'}
-                size={50}
-                style={styles.center}
+                size={90}
             />
-            <Text style={styles.center, styles.name}>John Smith <Icon name={'md-settings'} color={'grey'} size={15}/></Text>
-            <Text style={styles.userName}>@johnsmith</Text>
-            <Text style={styles.center}>Toronto, ON, Canada<Icon name={'md-settings'} color={'grey'} size={15}/></Text>
-            <Text style={styles.center}>
-                <View style={styles.score}>
-                    <Text>15</Text>
-                    <Text>Score</Text>
-                </View>
-                <View style={styles.score}>
-                    <Text><Icon name={'md-people'} color={'black'} size={30}/></Text>
-                    <Text>Friends</Text>
-                </View>
-            </Text>
+            <Text style={styles.name}>John Smith <Icon name={'md-settings'} color={'grey'} size={15}/></Text>
+            <Text style={styles.username}>@johnsmith</Text>
+            <Text style={styles.address}>Toronto, ON, Canada<Icon name={'md-settings'} color={'grey'} size={15}/></Text>
           </View>
+          <View style={styles.scoreFriends}>
+                <View style={styles.circle}>
+                    <Text style={styles.scoreNum}>15</Text>
+                    <Text style={styles.scoreText}>Score</Text>
+                </View>
+                <View style={styles.circle}>
+                    <Icon name={'md-people'} color={'black'} size={40}/>
+                    <Text style={styles.friendsText}>Friends</Text>
+                </View>
+            </View>
+            <View style={styles.searchBar}>
+                <TextInput
+                  style={styles.search}
+                  onChangeText={text => onChangeText(text)}
+                  value={value}
+                />
+                <Icon name={'md-people'} color={'black'} size={40} style={styles.searchIcon}/>
+            </View>
       </View>
     )
 }
@@ -58,24 +70,94 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    center: {
-        marginLeft: 'auto',
-        marginRight: 'auto',
+    headerContainer: {
+        flexDirection: 'row',
+        borderBottomWidth: .4,
+        minHeight: 70,
     },
-    header: {
-        fontSize: 50,
+    headerText: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        marginLeft: 15,
+    },
+    icon: {
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        marginRight: 15,
+    }, 
+    user: {
+        alignItems:'center',
+        marginTop: 30,
+        marginRight: 'auto',
+        marginLeft: 'auto',
+        marginBottom: 40,
     },
     name: {
-        fontSize: 30,
+        fontWeight: 'bold',
+        color: '#262626',
+        textDecorationLine: 'underline',
     },
-    userName: {
+    username: {
+        fontWeight: 'bold',
+        color: '#8f8f8f'
+    },
+    address: {
+        color: 'blue',
+        textDecorationLine: 'underline',
+    }, 
+    scoreFriends: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+    },
+    score: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    scoreNum: {
         fontSize: 20,
-        color: 'grey',
+        fontWeight: 'bold',
+    },
+    scoreText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    friends: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    friendsText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    circle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 100,
+        height: 100,
+        borderRadius: 100/2,
+        borderWidth: 3,
+        borderColor: 'black',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    score: {
-        fontSize: 30,
-        marginRight: 20,
+    searchBar: {
+        flexDirection: 'row',
+        marginTop: 50,
     },
+    search: {
+        flex:1,
+        height: 50,
+        borderBottomWidth: 1.5,
+        borderBottomColor: '#8f8f8f',
+        marginRight: 20,
+        marginLeft: 50,
+        color: '#8f8f8f',
+    },
+    searchIcon: {
+        marginRight: 50,
+    }
 });
