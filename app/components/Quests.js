@@ -3,7 +3,8 @@ import {
     StyleSheet, 
     Text, 
     View,
-    Button
+    Button,
+    FlatList
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -11,7 +12,31 @@ import Icon from 'react-native-vector-icons/Ionicons';
 export default function Quests() {
     return (
       <View>
-          <Text>Quests Page</Text>
+          <View style={styles.headerContainer}>
+            <Text style={styles.header}>Quests Page</Text>
+            <View style={styles.headerLocation}>
+                <Icon name={'md-map'} color={'black'} size={20}/>
+                <Text style={{ color: 'blue'}}>Toronto, ON</Text>
+            </View>
+          </View>
+          <FlatList
+            data={[
+                {key: 'Task #1', location: 'Toronto', tags: '#lit #Sweet'},
+                {key: 'Task #2', location: 'Ottawa', tags: '#5s #YAS'},
+                {key: 'Task #3', location: 'Toronto', tags: '#SIX'},
+                {key: 'Task #4', location: 'Toronto', tags: '#TDOT'},
+                {key: 'Task #5', location: 'Vancouver', tags: '#Whistler'},
+            ]}
+            renderItem={({item}) => 
+                <View style={styles.activity}>
+                    <View style={styles.person}>
+                        <Text style={styles.key}>{item.key}</Text>
+                        <Text style={styles.location}>{item.location}</Text>
+                    </View>
+                    <Text style={styles.tags}>{item.tags}</Text>
+                </View>
+            }
+          />
       </View>
     )
 }
@@ -27,4 +52,53 @@ Quests.navigationOptions = {
 }
 
 const styles = StyleSheet.create({
+    headerContainer: {
+        flexDirection: 'row',
+        borderBottomWidth: .4,
+        minHeight: 70,
+    },
+    header: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        marginLeft: 15,
+    },
+    headerLocation: {
+        flexDirection: 'row',
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        marginRight: 15,
+    },
+    activity: {
+        flex:1,
+        flexDirection: 'row',
+        backgroundColor: '#e6e6e6',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: 100,
+        margin: 10,
+        padding: 20,
+        borderRadius: 14,
+    },
+    person: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        minWidth: 200,
+        minHeight: 70,
+        marginRight: 30,
+    }, 
+    key: {
+        marginRight: 20,
+        fontSize: 30,
+        fontWeight: 'bold',
+    },
+    location: {
+        fontSize: 20,
+    },
+    tags: {
+        color: '#f09400',
+    }
 });
