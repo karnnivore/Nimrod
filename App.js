@@ -14,13 +14,13 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar
-          backgroundColor='green'
+          backgroundColor='#d4d4d3'
           barStyle='dark-content'
         />
         <View style={styles.header}>
-          <Icon name='ios-camera' size={28} color='white'/>
-          <Text>Nimrod</Text>
-          <Icon name='ios-menu' size={28} color='white'/>
+          <Icon name='ios-camera' size={28} style={styles.headerIcon}/>
+          <Text style={styles.nimrodHeader}>NIMROD</Text>
+          <Icon name='ios-menu' size={28} style={styles.headerIcon}/>
         </View>
         <MainScreenNavigator />
       </View>
@@ -32,12 +32,25 @@ const styles = StyleSheet.create({
   container: {
     flex:1
   },
+
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: 'red',
+    backgroundColor: '#948260',
     paddingHorizontal: 18,
-    paddingTop: 30,
+    paddingTop: 32,
+  },
+
+  headerIcon: {
+    color: '#edeae3',
+    paddingBottom: 8
+  },
+
+  nimrodHeader: {
+    color: '#ddd7cb',
+    fontWeight: 'bold',
+    fontSize: 30,
+    paddingBottom: 8
   }
 });
