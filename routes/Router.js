@@ -13,14 +13,15 @@ const MainScreenNavigator = createMaterialTopTabNavigator(
         Feed: ActivityScreen,
     },
     {
-        tabBarOptions: {  
-            activeTintColor: 'white',  
-            showIcon: true,  
-            showLabel: true,  
-            style: {  
-                backgroundColor:'red'  
-            }  
-        },  
+        tabBarOptions: {
+            activeTintColor: 'white',
+            showIcon: true,
+            showLabel: false, // possibly change this back, not sure what will
+                              // look good and what to see if can edit text styles
+            style: {
+                backgroundColor:'#7da27e'
+            }
+        },
     }
 )
 

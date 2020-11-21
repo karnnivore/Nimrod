@@ -73,35 +73,30 @@ const App = () => {
   );
 }
 
-/*
-export default class App extends React.Component {
-  //states for loading and user
-  constructor(props){
-    super(props);
-    this.state = {
-      user: '',
-    }
-  }
-  render() {
-    return (
-      <NavigationContainer>
-        <LoginStack/>
-      </NavigationContainer>
-    );
-  }
-}*/
-//test
 const styles = StyleSheet.create({
   container: {
     flex:1
   },
+
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: 'red',
-    paddingHorizontal: 18,
-    paddingTop: 30,
+    backgroundColor: '#948260',
+    paddingHorizontal: 22,
+    paddingTop: 32,
+  },
+
+  headerIcon: {
+    color: '#edeae3',
+    paddingBottom: 8
+  },
+
+  nimrodHeader: {
+    color: '#ddd7cb',
+    fontWeight: 'bold',
+    fontSize: 30,
+    paddingBottom: 8
   }
 });
 
