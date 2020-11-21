@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-    StyleSheet, 
-    Text, 
+import {
+    StyleSheet,
+    Text,
     View,
     TextInput,
     TouchableOpacity,
@@ -20,7 +20,7 @@ export default function Home() {
             <Icon name={'md-person'} color={'black'} size={50} style={styles.icon}/>
           </View>
           <View style={styles.user}>
-            <Icon 
+            <Icon
                 name={'md-person'}
                 color={'black'}
                 size={90}
@@ -81,13 +81,14 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 15,
+        color: '#606060'
     },
     icon: {
         marginLeft: 'auto',
         marginTop: 'auto',
         marginBottom: 'auto',
         marginRight: 15,
-    }, 
+    },
     user: {
         alignItems:'center',
         marginTop: 30,
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     address: {
         color: 'blue',
         textDecorationLine: 'underline',
-    }, 
+    },
     scoreFriends: {
         alignItems: 'center',
         justifyContent: 'center',

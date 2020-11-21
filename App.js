@@ -53,7 +53,7 @@ const App = () => {
         { user != null ? (
           <View style={styles.container}>
           <StatusBar
-            backgroundColor='green'
+            backgroundColor='#e0dad0'
             barStyle='dark-content'
           />
           <View style={styles.header}>
