@@ -10,7 +10,7 @@ import { AuthContext } from './app/components/context';
 
 const AppIndex = createAppContainer(MainScreenNavigator);
 /**
- * 
+ *
  */
 const App = () => {
   const [loading, setLoading] = React.useState(true);
@@ -31,7 +31,7 @@ const App = () => {
       setLoading(false)
     },
   })
-    
+
   );
   //after short delay display landing page
   useEffect(() => {
@@ -67,7 +67,7 @@ const App = () => {
         :
           <LoginStack/>
         }
-        
+
       </NavigationContainer>
     </AuthContext.Provider>
   );
