@@ -16,7 +16,7 @@ const MainScreenNavigator = createMaterialTopTabNavigator(
         tabBarOptions: {
             activeTintColor: 'white',
             showIcon: true,
-            showLabel: true,
+            showLabel: false,
             style: {
                 backgroundColor:'#7da27e'
             }
