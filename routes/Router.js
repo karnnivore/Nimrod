@@ -16,7 +16,8 @@ const MainScreenNavigator = createMaterialTopTabNavigator(
         tabBarOptions: {
             activeTintColor: 'white',
             showIcon: true,
-            showLabel: false,
+            showLabel: false, // possibly change this back, not sure what will
+                              // look good and what to see if can edit text styles
             style: {
                 backgroundColor:'#7da27e'
             }
