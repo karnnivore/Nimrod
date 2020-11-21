@@ -57,9 +57,9 @@ const App = () => {
             barStyle='dark-content'
           />
           <View style={styles.header}>
-            <Icon name='ios-camera' size={28} color='white'/>
-            <Text>Nimrod</Text>
-            <Icon name='ios-menu' size={28} color='white'/>
+            <Icon name='ios-camera' size={28} color='#e0dad0'/>
+            <Text style={styles.nimrodHeader}>NIMROD</Text>
+            <Icon name='ios-menu' size={28} color='#e0dad0'/>
           </View>
           <MainScreenNavigator />
           </View>
