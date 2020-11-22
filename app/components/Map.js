@@ -13,7 +13,7 @@ export default function Map() {
         <View>
             <View style={styles.headerContainer}>
                 <Text style={styles.headerText}>Map</Text>
-                <Icon name={'md-map'} color={'black'} size={50} style={styles.icon}/>
+                <Icon name={'md-map'} color={'#606060'} size={40} style={styles.icon}/>
             </View>
             <MapView
                 provider={PROVIDER_GOOGLE}
@@ -101,10 +101,10 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        marginLeft: 'auto',
+        marginLeft: 15,
         marginTop: 'auto',
         marginBottom: 'auto',
-        marginRight: 15,
+        marginRight: 'auto',
     },
 
     map: {

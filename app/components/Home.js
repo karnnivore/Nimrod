@@ -17,7 +17,7 @@ export default function Home() {
       <View>
           <View style={styles.headerContainer}>
             <Text style={styles.headerText}>My Profile</Text>
-            <Icon name={'md-person'} color={'black'} size={35} style={styles.icon}/>
+            <Icon name={'md-person'} color={'#606060'} size={35} style={styles.icon}/>
           </View>
           <Text style={styles.line}>────────────────────────────</Text>
           <View style={styles.user}>
@@ -96,7 +96,6 @@ const styles = StyleSheet.create({
         marginTop: 29,
         marginBottom: 'auto',
         marginRight: 110,
-        color: '#606060'
     },
 
     line: {
