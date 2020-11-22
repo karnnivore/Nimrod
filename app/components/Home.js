@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         fontFamily: 'MataoFreeDemoRegular400',
         marginTop: 'auto',
         marginBottom: 10,
-        marginLeft: 30,
+        marginLeft: 130,
         // textAlign: 'center',
         color: '#606060'
     },
