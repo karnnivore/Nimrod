@@ -94,9 +94,9 @@ const styles = StyleSheet.create({
 
   nimrodHeader: {
     color: '#ddd7cb',
-    fontWeight: 'bold',
     fontSize: 30,
-    paddingBottom: 8
+    paddingBottom: 8,
+    fontFamily: "ShareTechMonoRegular"
   }
 });
 
