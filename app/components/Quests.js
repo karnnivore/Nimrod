@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         // fontWeight: 'bold',
         marginTop: 'auto',
         marginBottom: 'auto',
-        marginLeft: 30,
+        marginLeft: 20,
         fontFamily: 'MataoFreeDemoRegular400',
         color: '#606060',
     },
