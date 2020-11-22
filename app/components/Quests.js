@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 100,
-        margin: 10,
-        padding: 20,
+        margin: 15,
+        padding: 15,
         borderRadius: 14,
     },
 
