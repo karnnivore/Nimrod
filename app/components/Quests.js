@@ -40,9 +40,6 @@ export default function Quests() {
                 </View>
             }
           />
-          <View>
-            <Text>RATE THIS POINT</Text>
-          </View>
       </View>
     )
 }
@@ -85,7 +82,7 @@ const styles = StyleSheet.create({
       marginLeft: 'auto',
       marginTop: 3,
       marginBottom: 'auto',
-      marginRight: 75,
+      marginRight: 55,
     },
 
     line: {
