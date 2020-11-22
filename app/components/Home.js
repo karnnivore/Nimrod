@@ -50,6 +50,14 @@ export default function Home() {
                 />
                 <Icon name={'md-people'} color={'#606060'} size={40} style={styles.searchIcon}/>
             </View>
+            <View style={styles.logoutContainer}>
+                <TouchableOpacity 
+                    style={styles.logoutButton}
+                    onPress={()=> {navigation.navigate('RegisterScreen')}}
+                >
+                    <Text style={styles.buttonText}>Logout</Text>
+                </TouchableOpacity>
+            </View>
       </View>
     )
 }
@@ -197,5 +205,27 @@ const styles = StyleSheet.create({
 
     searchIcon: {
         marginRight: 45,
+    },
+
+    logoutContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    logoutButton: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        height: 50,
+        width: 310,
+        borderWidth: 3,
+        borderRadius: 10,
+        borderColor: '#1E064B',
+    },
+    
+    buttonText: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: '#1E064B',
     }
 });
