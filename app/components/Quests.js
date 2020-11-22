@@ -21,6 +21,7 @@ export default function Quests() {
             </View>
           </View>
           <Text style={styles.line}>────────────────────────────────────</Text>
+          <Text style={styles.questText}>CN TOWER</Text>
           <FlatList
             data={[
                 {key: 'Task #1', location: 'Toronto', tags: '#lit #Sweet'},
@@ -56,14 +57,12 @@ Quests.navigationOptions = {
 const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
-        // borderBottomWidth: .4,
         minHeight: 70,
         marginTop: 5,
     },
 
     header: {
         fontSize: 30,
-        // fontWeight: 'bold',
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 20,
@@ -94,10 +93,19 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
 
+    questText: {
+      marginTop: -5,
+      marginLeft: 20,
+      fontSize: 30,
+      color: '#606060',
+      marginBottom: 10,
+      fontFamily: 'Elephant400'
+    },
+
     activity: {
         flex:1,
         flexDirection: 'row',
-        backgroundColor: '#e6e6e6',
+        backgroundColor: '#d7ecd1',
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 100,

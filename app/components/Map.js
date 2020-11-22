@@ -86,7 +86,6 @@ Map.navigationOptions = {
 const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
-        // borderBottomWidth: .4,
         minHeight: 70,
     },
 

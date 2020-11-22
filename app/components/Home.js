@@ -76,18 +76,15 @@ const styles = StyleSheet.create({
 
     headerContainer: {
         flexDirection: 'row',
-        // borderBottomWidth: .4,
         minHeight: 70,
     },
 
     headerText: {
         fontSize: 30,
-        // fontWeight: 'bold',
         fontFamily: 'MataoFreeDemoRegular400',
         marginTop: 'auto',
         marginBottom: 5,
         marginLeft: 120,
-        // textAlign: 'center',
         color: '#606060'
     },
 
