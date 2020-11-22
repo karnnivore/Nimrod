@@ -25,6 +25,8 @@ export default function Home() {
                 name={'md-person'}
                 color={'black'}
                 size={90}
+                color='#606060'
+                // style={styles.circle}
             />
             <Text style={styles.name}>John Smith <Icon name={'md-settings'} color={'grey'} size={15}/></Text>
             <Text style={styles.username}>@johnsmith</Text>
@@ -111,19 +113,29 @@ const styles = StyleSheet.create({
     },
 
     name: {
-        fontWeight: 'bold',
-        color: '#262626',
+        // fontWeight: 'bold',
+        fontFamily: 'PointSoftDEMOSemiBold300',
+        // fontFamily: 'MADEKenfolg400',
+        // fontFamily: 'Marvin400',
+        color: '#232323',
         textDecorationLine: 'underline',
+        paddingLeft: 12,
     },
 
     username: {
-        fontWeight: 'bold',
-        color: '#8f8f8f'
+        // fontWeight: 'bold',
+        color: '#8f8f8f',
+        // fontFamily: 'MADEKenfolg400',
+        fontFamily: 'PointSoftDEMOSemiBold300',
+        marginTop: 8,
     },
 
     address: {
         color: 'blue',
         textDecorationLine: 'underline',
+        marginTop: 3,
+        paddingLeft: 10,
+        fontFamily: 'PointSoftDEMOSemiBold300',
     },
 
     scoreFriends: {
