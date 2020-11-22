@@ -100,7 +100,8 @@ const styles = StyleSheet.create({
 
     line: {
       marginLeft: 70,
-      color: '#d3d3d3'
+      color: '#d3d3d3',
+      fontWeight: 'bold',
     },
 
     user: {

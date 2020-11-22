@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     headerText: {
         fontSize: 30,
         fontFamily: 'MataoFreeDemoRegular400',
-        // fontWeight: 'bold',
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 30,

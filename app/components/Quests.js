@@ -15,10 +15,12 @@ export default function Quests() {
           <View style={styles.headerContainer}>
             <Text style={styles.header}>Quests Page</Text>
             <View style={styles.headerLocation}>
-                <Icon name={'md-map'} color={'black'} size={20}/>
-                <Text style={{ color: 'blue'}}>Toronto, ON</Text>
+                <Icon name={'md-bookmarks'} color={'#606060'} size={40} style={styles.icon}/>
+                <Text style={{ color: 'blue', paddingTop: 18, paddingRight: 8,
+                fontFamily: 'PointSoftDEMOSemiBold300', textDecorationLine: 'underline'}}>Toronto, ON</Text>
             </View>
           </View>
+          <Text style={styles.line}>────────────────────────────────────</Text>
           <FlatList
             data={[
                 {key: 'Task #1', location: 'Toronto', tags: '#lit #Sweet'},
@@ -56,6 +58,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         // borderBottomWidth: .4,
         minHeight: 70,
+        marginTop: 5,
     },
 
     header: {
@@ -74,6 +77,21 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
         marginBottom: 'auto',
         marginRight: 15,
+    },
+
+    icon: {
+      marginLeft: 'auto',
+      marginTop: 3,
+      marginBottom: 'auto',
+      marginRight: 75,
+    },
+
+    line: {
+      marginLeft: 25,
+      marginTop: -5,
+      marginBottom: 15,
+      color: '#d3d3d3',
+      fontWeight: 'bold',
     },
 
     activity: {
