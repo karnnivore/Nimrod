@@ -97,7 +97,8 @@ const styles = StyleSheet.create({
     fontSize: 35,
     paddingBottom: 5,
     paddingTop: 5,
-    fontFamily: "ShareTechMonoRegular"
+    //fontFamily: "MataoFreeDemoRegular400" this may be better not sure which is preferred
+    fontFamily: "FonsecaBold700"
   }
 });
 
