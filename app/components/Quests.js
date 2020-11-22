@@ -24,11 +24,11 @@ export default function Quests() {
           <Text style={styles.questText}>CN TOWER</Text>
           <FlatList
             data={[
-                {key: 'Task #1', location: 'Toronto', tags: '#lit #Sweet'},
-                {key: 'Task #2', location: 'Ottawa', tags: '#5s #YAS'},
-                {key: 'Task #3', location: 'Toronto', tags: '#SIX'},
-                {key: 'Task #4', location: 'Toronto', tags: '#TDOT'},
-                {key: 'Task #5', location: 'Vancouver', tags: '#Whistler'},
+                {key: 'Task #1', location: 'Toronto', tags: '#picture #task'},
+                {key: 'Task #2', location: 'Toronto', tags: '#6ix #findit'},
+                {key: 'Task #3', location: 'Toronto', tags: '#grabit'},
+                {key: 'Task #4', location: 'Toronto', tags: '#findabox'},
+                {key: 'Task #5', location: 'Toronto', tags: '#truthordare'},
             ]}
             renderItem={({item}) =>
                 <View style={styles.activity}>
@@ -125,15 +125,21 @@ const styles = StyleSheet.create({
 
     key: {
         marginRight: 20,
-        fontSize: 30,
-        fontWeight: 'bold',
+        fontSize: 25,
+        fontFamily: 'MADEKenfolg400'
     },
 
     location: {
-        fontSize: 20,
+        fontSize: 18,
+        fontFamily: 'BasierSquareRegular400',
+        textDecorationLine: 'underline',
+        color: '#929292'
     },
 
     tags: {
         color: '#f09400',
+        fontFamily: 'BasierSquareRegular400'
+        // fontFamily: 'YellowPeasRegular400'
+        //fontFamily: 'LeoSemiRoundedLight400'
     }
 });
