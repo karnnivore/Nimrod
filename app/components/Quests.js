@@ -40,6 +40,9 @@ export default function Quests() {
                 </View>
             }
           />
+          <View>
+            <Text>RATE THIS POINT</Text>
+          </View>
       </View>
     )
 }
@@ -138,8 +141,6 @@ const styles = StyleSheet.create({
 
     tags: {
         color: '#f09400',
-        fontFamily: 'BasierSquareRegular400'
-        // fontFamily: 'YellowPeasRegular400'
-        //fontFamily: 'LeoSemiRoundedLight400'
+        fontFamily: 'PointSoftDEMOSemiBold300'
     }
 });
