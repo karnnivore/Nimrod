@@ -19,6 +19,7 @@ export default function Home() {
             <Text style={styles.headerText}>My Profile</Text>
             <Icon name={'md-person'} color={'black'} size={50} style={styles.icon}/>
           </View>
+          <Text style={styles.line}>────────────────────────────</Text>
           <View style={styles.user}>
             <Icon
                 name={'md-person'}
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
         // fontWeight: 'bold',
         fontFamily: 'MataoFreeDemoRegular400',
         marginTop: 'auto',
-        marginBottom: 10,
+        marginBottom: 5,
         marginLeft: 130,
         // textAlign: 'center',
         color: '#606060'
@@ -93,6 +94,11 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
         marginBottom: 'auto',
         marginRight: 15,
+    },
+
+    line: {
+      marginLeft: 60,
+      color: '#d3d3d3'
     },
 
     user: {
