@@ -84,18 +84,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#948260',
     paddingHorizontal: 22,
-    paddingTop: 32,
+    paddingTop: 30,
+    paddingBottom: 5
   },
 
   headerIcon: {
-    color: '#edeae3',
-    paddingBottom: 8
+    color: '#edeae3'
   },
 
   nimrodHeader: {
     color: '#ddd7cb',
-    fontSize: 30,
-    paddingBottom: 8,
+    fontSize: 35,
+    paddingBottom: 5,
+    paddingTop: 5,
     fontFamily: "ShareTechMonoRegular"
   }
 });
