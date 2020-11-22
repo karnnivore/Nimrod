@@ -48,7 +48,7 @@ export default function Home() {
                   onChangeText={text => onChangeText(text)}
                   value={value}
                 />
-                <Icon name={'md-people'} color={'black'} size={40} style={styles.searchIcon}/>
+                <Icon name={'md-people'} color={'#606060'} size={40} style={styles.searchIcon}/>
             </View>
       </View>
     )
@@ -185,20 +185,20 @@ const styles = StyleSheet.create({
 
     searchBar: {
         flexDirection: 'row',
-        marginTop: 50,
+        marginTop: 30,
     },
 
     search: {
         flex:1,
         height: 50,
         borderBottomWidth: 1.5,
-        borderBottomColor: '#8f8f8f',
+        borderBottomColor: '#a9a9a9',
         marginRight: 20,
         marginLeft: 50,
-        color: '#8f8f8f',
+        color: '#a9a9a9',
     },
 
     searchIcon: {
-        marginRight: 50,
+        marginRight: 45,
     }
 });
