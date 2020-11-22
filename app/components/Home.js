@@ -77,10 +77,11 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 30,
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
+        fontFamily: 'MataoFreeDemoRegular400',
         marginTop: 'auto',
         marginBottom: 10,
-        marginLeft: 15,
+        marginLeft: 20,
         // textAlign: 'center',
         color: '#606060'
     },
