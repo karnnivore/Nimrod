@@ -8,10 +8,13 @@ import {
     Button,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AuthContext } from './context';
 
 //get navigation property and pass to Home function
 export default function Home() {
-    const [value, onChangeText] = React.useState('Search...')
+    const [value, onChangeText] = React.useState('Search...');
+
+    const { signOut } = React.useContext(AuthContext);
 
     return (
       <View>
@@ -53,7 +56,7 @@ export default function Home() {
             <View style={styles.logoutContainer}>
                 <TouchableOpacity 
                     style={styles.logoutButton}
-                    onPress={()=> {navigation.navigate('RegisterScreen')}}
+                    onPress={()=> {}}
                 >
                     <Text style={styles.buttonText}>Logout</Text>
                 </TouchableOpacity>
@@ -222,7 +225,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: '#1E064B',
     },
-    
+
     buttonText: {
         fontSize: 25,
         fontWeight: 'bold',

@@ -7,12 +7,16 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import LoginStack from './routes/LoginStack';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from './app/components/context';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { DrawerStackScreen } from './routes/DrawerNav';
+import {HomeScreen} from './app/components/Home';
+import {ActivityFeed} from './app/components/ActivityFeed';
 
 const AppIndex = createAppContainer(MainScreenNavigator);
-/**
- *
- */
-const App = () => {
+
+const Drawer = createDrawerNavigator();
+
+export default function App({navigation}) {
   const [loading, setLoading] = React.useState(true);
   const [user, setUser] = React.useState(null);
 
@@ -52,16 +56,20 @@ const App = () => {
       <NavigationContainer>
         { user != null ? (
           <View style={styles.container}>
-          <StatusBar
-            backgroundColor='#e0dad0'
-            barStyle='dark-content'
-          />
-          <View style={styles.header}>
-            <Icon name='ios-camera' size={28} color='#e0dad0'/>
-            <Text style={styles.nimrodHeader}>NIMROD</Text>
-            <Icon name='ios-menu' size={28} color='#e0dad0'/>
-          </View>
-          <MainScreenNavigator />
+            <StatusBar
+              backgroundColor='#e0dad0'
+              barStyle='dark-content'
+            />
+            <View style={styles.header}>
+              <Icon name='ios-camera' size={28} color='#e0dad0'
+                onPress={() => {}}
+              />
+              <Text style={styles.nimrodHeader}>NIMROD</Text>
+              <Icon name='ios-menu' size={28} color='#e0dad0'
+                onPress={() => {}}
+              />
+            </View>
+            <MainScreenNavigator/>
           </View>
         )
         :
@@ -101,5 +109,3 @@ const styles = StyleSheet.create({
     fontFamily: "FonsecaBold700"
   }
 });
-
-export default App;
