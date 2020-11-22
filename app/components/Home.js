@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         fontFamily: 'MataoFreeDemoRegular400',
         marginTop: 'auto',
         marginBottom: 5,
-        marginLeft: 130,
+        marginLeft: 120,
         // textAlign: 'center',
         color: '#606060'
     },
@@ -93,12 +93,12 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginTop: 29,
         marginBottom: 'auto',
-        marginRight: 90,
+        marginRight: 110,
         color: '#606060'
     },
 
     line: {
-      marginLeft: 60,
+      marginLeft: 70,
       color: '#d3d3d3'
     },
 
