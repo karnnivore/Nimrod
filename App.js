@@ -10,7 +10,7 @@ import { AuthContext } from './app/components/context';
 
 const AppIndex = createAppContainer(MainScreenNavigator);
 /**
- * 
+ *
  */
 const App = () => {
   const [loading, setLoading] = React.useState(true);
@@ -31,7 +31,7 @@ const App = () => {
       setLoading(false)
     },
   })
-    
+
   );
   //after short delay display landing page
   useEffect(() => {
@@ -53,13 +53,13 @@ const App = () => {
         { user != null ? (
           <View style={styles.container}>
           <StatusBar
-            backgroundColor='green'
+            backgroundColor='#e0dad0'
             barStyle='dark-content'
           />
           <View style={styles.header}>
-            <Icon name='ios-camera' size={28} color='white'/>
-            <Text>Nimrod</Text>
-            <Icon name='ios-menu' size={28} color='white'/>
+            <Icon name='ios-camera' size={28} color='#e0dad0'/>
+            <Text style={styles.nimrodHeader}>NIMROD</Text>
+            <Icon name='ios-menu' size={28} color='#e0dad0'/>
           </View>
           <MainScreenNavigator />
           </View>
@@ -67,7 +67,7 @@ const App = () => {
         :
           <LoginStack/>
         }
-        
+
       </NavigationContainer>
     </AuthContext.Provider>
   );
@@ -84,19 +84,21 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#948260',
     paddingHorizontal: 22,
-    paddingTop: 32,
+    paddingTop: 30,
+    paddingBottom: 5
   },
 
   headerIcon: {
-    color: '#edeae3',
-    paddingBottom: 8
+    color: '#edeae3'
   },
 
   nimrodHeader: {
     color: '#ddd7cb',
-    fontWeight: 'bold',
-    fontSize: 30,
-    paddingBottom: 8
+    fontSize: 35,
+    paddingBottom: 5,
+    paddingTop: 5,
+    //fontFamily: "MataoFreeDemoRegular400" this may be better not sure which is preferred
+    fontFamily: "FonsecaBold700"
   }
 });
 

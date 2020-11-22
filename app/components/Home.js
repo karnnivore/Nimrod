@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-    StyleSheet, 
-    Text, 
+import {
+    StyleSheet,
+    Text,
     View,
     TextInput,
     TouchableOpacity,
@@ -17,13 +17,16 @@ export default function Home() {
       <View>
           <View style={styles.headerContainer}>
             <Text style={styles.headerText}>My Profile</Text>
-            <Icon name={'md-person'} color={'black'} size={50} style={styles.icon}/>
+            <Icon name={'md-person'} color={'#606060'} size={35} style={styles.icon}/>
           </View>
+          <Text style={styles.line}>────────────────────────────</Text>
           <View style={styles.user}>
-            <Icon 
+            <Icon
                 name={'md-person'}
                 color={'black'}
                 size={90}
+                color='#606060'
+                // style={styles.circle}
             />
             <Text style={styles.name}>John Smith <Icon name={'md-settings'} color={'grey'} size={15}/></Text>
             <Text style={styles.username}>@johnsmith</Text>
@@ -32,10 +35,10 @@ export default function Home() {
           <View style={styles.scoreFriends}>
                 <View style={styles.circle}>
                     <Text style={styles.scoreNum}>15</Text>
-                    <Text style={styles.scoreText}>Score</Text>
+                    <Text style={styles.scoreText}>SCORE</Text>
                 </View>
                 <View style={styles.circle}>
-                    <Icon name={'md-people'} color={'black'} size={40}/>
+                    <Icon name={'md-people'} color={'#606060'} size={40} style={styles.friendIcon}/>
                     <Text style={styles.friendsText}>Friends</Text>
                 </View>
             </View>
@@ -45,7 +48,7 @@ export default function Home() {
                   onChangeText={text => onChangeText(text)}
                   value={value}
                 />
-                <Icon name={'md-people'} color={'black'} size={40} style={styles.searchIcon}/>
+                <Icon name={'md-people'} color={'#606060'} size={40} style={styles.searchIcon}/>
             </View>
       </View>
     )
@@ -70,24 +73,34 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+
     headerContainer: {
         flexDirection: 'row',
-        borderBottomWidth: .4,
         minHeight: 70,
     },
+
     headerText: {
         fontSize: 30,
-        fontWeight: 'bold',
+        fontFamily: 'MataoFreeDemoRegular400',
         marginTop: 'auto',
-        marginBottom: 'auto',
-        marginLeft: 15,
+        marginBottom: 5,
+        marginLeft: 110,
+        color: '#606060'
     },
+
     icon: {
         marginLeft: 'auto',
-        marginTop: 'auto',
+        marginTop: 29,
         marginBottom: 'auto',
-        marginRight: 15,
-    }, 
+        marginRight: 100,
+    },
+
+    line: {
+      marginLeft: 55,
+      color: '#d3d3d3',
+      fontWeight: 'bold',
+    },
+
     user: {
         alignItems:'center',
         marginTop: 30,
@@ -95,69 +108,94 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginBottom: 40,
     },
+
     name: {
-        fontWeight: 'bold',
-        color: '#262626',
+        fontFamily: 'PointSoftDEMOSemiBold300',
+        color: '#232323',
         textDecorationLine: 'underline',
+        paddingLeft: 12,
     },
+
     username: {
-        fontWeight: 'bold',
-        color: '#8f8f8f'
+        color: '#8f8f8f',
+        fontFamily: 'PointSoftDEMOSemiBold300',
+        marginTop: 8,
     },
+
     address: {
         color: 'blue',
         textDecorationLine: 'underline',
-    }, 
+        marginTop: 3,
+        paddingLeft: 10,
+        fontFamily: 'PointSoftDEMOSemiBold300',
+    },
+
     scoreFriends: {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
     },
+
     score: {
         flex: 1,
         alignItems: 'center',
     },
+
     scoreNum: {
-        fontSize: 20,
-        fontWeight: 'bold',
+        fontSize: 35,
+        fontFamily: 'MADEKenfolg400',
+        color: '#606060',
+        paddingBottom: 5,
     },
+
     scoreText: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily: 'Marvin400'
     },
+
+    friendIcon: {
+      paddingBottom: 5,
+    },
+
     friends: {
         flex: 1,
         alignItems: 'center',
     },
+
     friendsText: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily: 'Marvin400',
     },
+
     circle: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: 100,
-        height: 100,
-        borderRadius: 100/2,
+        width: 120,
+        height: 120,
+        borderRadius: 120/2,
         borderWidth: 3,
         borderColor: 'black',
         marginLeft: 'auto',
         marginRight: 'auto',
+        borderColor: '#606060',
     },
+
     searchBar: {
         flexDirection: 'row',
-        marginTop: 50,
+        marginTop: 30,
     },
+
     search: {
         flex:1,
         height: 50,
         borderBottomWidth: 1.5,
-        borderBottomColor: '#8f8f8f',
+        borderBottomColor: '#a9a9a9',
         marginRight: 20,
         marginLeft: 50,
-        color: '#8f8f8f',
+        color: '#a9a9a9',
     },
+
     searchIcon: {
-        marginRight: 50,
+        marginRight: 45,
     }
 });

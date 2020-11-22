@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-    StyleSheet, 
-    Text, 
+import {
+    StyleSheet,
+    Text,
     View,
     Button,
     FlatList,
@@ -15,7 +15,7 @@ export default function ActivityFeed() {
       <View>
           <View style={styles.headerContainer}>
             <Text style={styles.header}>Activity Feed</Text>
-            <Icon name={'md-people'} color={'black'} size={50} style={styles.icon}/>
+            <Icon name={'md-people'} color={'#606060'} size={40} style={styles.icon}/>
           </View>
           <FlatList
             data={[
@@ -25,9 +25,9 @@ export default function ActivityFeed() {
                 {key: 'Kevin', location: 'Toronto', questStatus: 'Quest Completed', time:'30 MINS AGO'},
                 {key: 'Georgina', location: 'Vancouver', questStatus: 'Quest Completed', time:'45 MINS AGO'},
             ]}
-            renderItem={({item}) => 
+            renderItem={({item}) =>
                 <View style={styles.activity}>
-                    <Icon name={'md-people'} color={'black'} size={80}/>
+                    <Icon name={'md-people'} color={'#606060'} size={80}/>
                     <View style={styles.person}>
                         <Text style={styles.name}>{item.key}</Text>
                         <Text style={styles.location}>{item.location}</Text>
@@ -55,32 +55,36 @@ ActivityFeed.navigationOptions = {
 const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
-        borderBottomWidth: .4,
         minHeight: 70,
     },
+
     header: {
         fontSize: 30,
-        fontWeight: 'bold',
         marginTop: 'auto',
         marginBottom: 'auto',
-        marginLeft: 15,
+        marginLeft: 20,
+        fontFamily: 'MataoFreeDemoRegular400',
+        color: '#606060',
     },
+
     icon: {
-        marginLeft: 'auto',
-        marginTop: 'auto',
-        marginBottom: 'auto',
-        marginRight: 15,
+      marginLeft: 'auto',
+      marginTop: 'auto',
+      marginBottom: 'auto',
+      marginRight: 150,
     },
+
     activity: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: '#e6e6e6',
+        backgroundColor: '#eeeeee',
         minHeight: 100,
         margin: 10,
         padding: 20,
         borderRadius: 14,
     },
+
     person: {
         flexDirection: 'column',
         justifyContent: 'center',
@@ -88,17 +92,32 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         paddingLeft: 10,
     },
+
+    quest: {
+      color: '#606060',
+      paddingTop: 3,
+      fontFamily: 'BasierSquareRegular400'
+    },
+
     time: {
         marginTop: 'auto',
         marginBottom: 'auto',
         marginLeft: 15,
+        fontSize: 15,
+        color: '#aaaaaa',
+        fontFamily: 'Elephant400'
     },
+
     name: {
         fontSize: 25,
-        fontWeight: 'bold',
-        color: '#303030'
-    }, 
+        color: '#606060',
+        fontFamily: 'MADEKenfolg400',
+        paddingBottom: 5
+    },
+
     location: {
         color: 'blue',
+        fontFamily: 'BasierSquareRegular400',
+        textDecorationLine: 'underline',
     }
 });

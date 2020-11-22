@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-    StyleSheet, 
-    Text, 
+import {
+    StyleSheet,
+    Text,
     View,
     Button,
     FlatList
@@ -15,19 +15,22 @@ export default function Quests() {
           <View style={styles.headerContainer}>
             <Text style={styles.header}>Quests Page</Text>
             <View style={styles.headerLocation}>
-                <Icon name={'md-map'} color={'black'} size={20}/>
-                <Text style={{ color: 'blue'}}>Toronto, ON</Text>
+                <Icon name={'md-bookmarks'} color={'#606060'} size={40} style={styles.icon}/>
+                <Text style={{ color: 'blue', paddingTop: 18, paddingRight: 8,
+                fontFamily: 'PointSoftDEMOSemiBold300', textDecorationLine: 'underline'}}>Toronto, ON</Text>
             </View>
           </View>
+          <Text style={styles.line}>────────────────────────────────────</Text>
+          <Text style={styles.questText}>CN TOWER</Text>
           <FlatList
             data={[
-                {key: 'Task #1', location: 'Toronto', tags: '#lit #Sweet'},
-                {key: 'Task #2', location: 'Ottawa', tags: '#5s #YAS'},
-                {key: 'Task #3', location: 'Toronto', tags: '#SIX'},
-                {key: 'Task #4', location: 'Toronto', tags: '#TDOT'},
-                {key: 'Task #5', location: 'Vancouver', tags: '#Whistler'},
+                {key: 'Task #1', location: 'Toronto', tags: '#picture #task'},
+                {key: 'Task #2', location: 'Toronto', tags: '#6ix #findit'},
+                {key: 'Task #3', location: 'Toronto', tags: '#grabit'},
+                {key: 'Task #4', location: 'Toronto', tags: '#findabox'},
+                {key: 'Task #5', location: 'Toronto', tags: '#truthordare'},
             ]}
-            renderItem={({item}) => 
+            renderItem={({item}) =>
                 <View style={styles.activity}>
                     <View style={styles.person}>
                         <Text style={styles.key}>{item.key}</Text>
@@ -54,16 +57,19 @@ Quests.navigationOptions = {
 const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
-        borderBottomWidth: .4,
         minHeight: 70,
+        marginTop: 5,
     },
+
     header: {
         fontSize: 30,
-        fontWeight: 'bold',
         marginTop: 'auto',
         marginBottom: 'auto',
-        marginLeft: 15,
+        marginLeft: 20,
+        fontFamily: 'MataoFreeDemoRegular400',
+        color: '#606060',
     },
+
     headerLocation: {
         flexDirection: 'row',
         marginLeft: 'auto',
@@ -71,17 +77,43 @@ const styles = StyleSheet.create({
         marginBottom: 'auto',
         marginRight: 15,
     },
+
+    icon: {
+      marginLeft: 'auto',
+      marginTop: 3,
+      marginBottom: 'auto',
+      marginRight: 55,
+    },
+
+    line: {
+      marginLeft: 14,
+      marginTop: -5,
+      marginBottom: 15,
+      color: '#d3d3d3',
+      fontWeight: 'bold',
+    },
+
+    questText: {
+      marginTop: -5,
+      marginLeft: 20,
+      fontSize: 30,
+      color: '#606060',
+      marginBottom: 10,
+      fontFamily: 'Elephant400'
+    },
+
     activity: {
         flex:1,
         flexDirection: 'row',
-        backgroundColor: '#e6e6e6',
+        backgroundColor: '#d7ecd1',
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 100,
-        margin: 10,
-        padding: 20,
+        margin: 15,
+        padding: 15,
         borderRadius: 14,
     },
+
     person: {
         flex: 1,
         flexDirection: 'row',
@@ -89,16 +121,23 @@ const styles = StyleSheet.create({
         minWidth: 200,
         minHeight: 70,
         marginRight: 30,
-    }, 
+    },
+
     key: {
         marginRight: 20,
-        fontSize: 30,
-        fontWeight: 'bold',
+        fontSize: 25,
+        fontFamily: 'MADEKenfolg400'
     },
+
     location: {
-        fontSize: 20,
+        fontSize: 18,
+        fontFamily: 'BasierSquareRegular400',
+        textDecorationLine: 'underline',
+        color: '#929292'
     },
+
     tags: {
         color: '#f09400',
+        fontFamily: 'PointSoftDEMOSemiBold300'
     }
 });
