@@ -79,8 +79,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         marginTop: 'auto',
-        marginBottom: 'auto',
+        marginBottom: 10,
         marginLeft: 15,
+        // textAlign: 'center',
         color: '#606060'
     },
     icon: {
