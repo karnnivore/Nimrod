@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-    StyleSheet, 
-    Text, 
+import {
+    StyleSheet,
+    Text,
     View,
     Button,
     FlatList
@@ -27,7 +27,7 @@ export default function Quests() {
                 {key: 'Task #4', location: 'Toronto', tags: '#TDOT'},
                 {key: 'Task #5', location: 'Vancouver', tags: '#Whistler'},
             ]}
-            renderItem={({item}) => 
+            renderItem={({item}) =>
                 <View style={styles.activity}>
                     <View style={styles.person}>
                         <Text style={styles.key}>{item.key}</Text>
@@ -54,16 +54,20 @@ Quests.navigationOptions = {
 const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
-        borderBottomWidth: .4,
+        // borderBottomWidth: .4,
         minHeight: 70,
     },
+
     header: {
         fontSize: 30,
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         marginTop: 'auto',
         marginBottom: 'auto',
-        marginLeft: 15,
+        marginLeft: 30,
+        fontFamily: 'MataoFreeDemoRegular400',
+        color: '#606060',
     },
+
     headerLocation: {
         flexDirection: 'row',
         marginLeft: 'auto',
@@ -71,6 +75,7 @@ const styles = StyleSheet.create({
         marginBottom: 'auto',
         marginRight: 15,
     },
+
     activity: {
         flex:1,
         flexDirection: 'row',
@@ -82,6 +87,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 14,
     },
+
     person: {
         flex: 1,
         flexDirection: 'row',
@@ -89,15 +95,18 @@ const styles = StyleSheet.create({
         minWidth: 200,
         minHeight: 70,
         marginRight: 30,
-    }, 
+    },
+
     key: {
         marginRight: 20,
         fontSize: 30,
         fontWeight: 'bold',
     },
+
     location: {
         fontSize: 20,
     },
+
     tags: {
         color: '#f09400',
     }

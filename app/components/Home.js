@@ -70,27 +70,31 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+
     headerContainer: {
         flexDirection: 'row',
-        borderBottomWidth: .4,
+        // borderBottomWidth: .4,
         minHeight: 70,
     },
+
     headerText: {
         fontSize: 30,
         // fontWeight: 'bold',
         fontFamily: 'MataoFreeDemoRegular400',
         marginTop: 'auto',
         marginBottom: 10,
-        marginLeft: 20,
+        marginLeft: 30,
         // textAlign: 'center',
         color: '#606060'
     },
+
     icon: {
         marginLeft: 'auto',
         marginTop: 'auto',
         marginBottom: 'auto',
         marginRight: 15,
     },
+
     user: {
         alignItems:'center',
         marginTop: 30,
@@ -98,44 +102,54 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginBottom: 40,
     },
+
     name: {
         fontWeight: 'bold',
         color: '#262626',
         textDecorationLine: 'underline',
     },
+
     username: {
         fontWeight: 'bold',
         color: '#8f8f8f'
     },
+
     address: {
         color: 'blue',
         textDecorationLine: 'underline',
     },
+
     scoreFriends: {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
     },
+
     score: {
         flex: 1,
         alignItems: 'center',
     },
+
     scoreNum: {
         fontSize: 20,
         fontWeight: 'bold',
     },
+
     scoreText: {
         fontSize: 20,
         fontWeight: 'bold',
     },
+
     friends: {
         flex: 1,
         alignItems: 'center',
     },
+
     friendsText: {
         fontSize: 20,
         fontWeight: 'bold',
     },
+
     circle: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -147,10 +161,12 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+
     searchBar: {
         flexDirection: 'row',
         marginTop: 50,
     },
+
     search: {
         flex:1,
         height: 50,
@@ -160,6 +176,7 @@ const styles = StyleSheet.create({
         marginLeft: 50,
         color: '#8f8f8f',
     },
+
     searchIcon: {
         marginRight: 50,
     }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-    StyleSheet, 
-    Text, 
+import {
+    StyleSheet,
+    Text,
     View,
     Button
 } from 'react-native';
@@ -25,42 +25,42 @@ export default function Map() {
                   longitudeDelta: 0.05
                 }}
             >
-                <Marker 
+                <Marker
                     coordinate={{
                         latitude: 43.6669058,
                         longitude: -79.3953471,
                     }}
                     title={'First Quest'}
                 />
-                <Marker 
+                <Marker
                     coordinate={{
                         latitude: 43.69,
                         longitude: -79.3953400,
                     }}
                     title={'Second Quest'}
                 />
-                <Marker 
+                <Marker
                     coordinate={{
                         latitude: 43.66,
                         longitude: -79.40,
                     }}
                     title={'Third Quest'}
                 />
-                <Marker 
+                <Marker
                     coordinate={{
                         latitude: 43.678,
                         longitude: -79.379,
                     }}
                     title={'Fourth Quest'}
                 />
-                <Marker 
+                <Marker
                     coordinate={{
                         latitude: 43.678,
                         longitude: -79.39,
                     }}
                     title={'Fifth Quest'}
                 />
-                <Marker 
+                <Marker
                     coordinate={{
                         latitude: 43.678,
                         longitude: -79.41,
@@ -68,7 +68,7 @@ export default function Map() {
                     title={'Sixth Quest'}
                 />
             </MapView>
-            
+
         </View>
     )
 }
@@ -86,22 +86,27 @@ Map.navigationOptions = {
 const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
-        borderBottomWidth: .4,
+        // borderBottomWidth: .4,
         minHeight: 70,
     },
+
     headerText: {
         fontSize: 30,
-        fontWeight: 'bold',
+        fontFamily: 'MataoFreeDemoRegular400',
+        // fontWeight: 'bold',
         marginTop: 'auto',
         marginBottom: 'auto',
-        marginLeft: 15,
+        marginLeft: 30,
+        color: '#606060'
     },
+
     icon: {
         marginLeft: 'auto',
         marginTop: 'auto',
         marginBottom: 'auto',
         marginRight: 15,
     },
+
     map: {
         height: '100%',
     }
