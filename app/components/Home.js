@@ -35,10 +35,10 @@ export default function Home() {
           <View style={styles.scoreFriends}>
                 <View style={styles.circle}>
                     <Text style={styles.scoreNum}>15</Text>
-                    <Text style={styles.scoreText}>Score</Text>
+                    <Text style={styles.scoreText}>SCORE</Text>
                 </View>
                 <View style={styles.circle}>
-                    <Icon name={'md-people'} color={'black'} size={40}/>
+                    <Icon name={'md-people'} color={'#606060'} size={40} style={styles.friendIcon}/>
                     <Text style={styles.friendsText}>Friends</Text>
                 </View>
             </View>
@@ -113,19 +113,14 @@ const styles = StyleSheet.create({
     },
 
     name: {
-        // fontWeight: 'bold',
         fontFamily: 'PointSoftDEMOSemiBold300',
-        // fontFamily: 'MADEKenfolg400',
-        // fontFamily: 'Marvin400',
         color: '#232323',
         textDecorationLine: 'underline',
         paddingLeft: 12,
     },
 
     username: {
-        // fontWeight: 'bold',
         color: '#8f8f8f',
-        // fontFamily: 'MADEKenfolg400',
         fontFamily: 'PointSoftDEMOSemiBold300',
         marginTop: 8,
     },
@@ -150,13 +145,19 @@ const styles = StyleSheet.create({
     },
 
     scoreNum: {
-        fontSize: 20,
-        fontWeight: 'bold',
+        fontSize: 35,
+        fontFamily: 'MADEKenfolg400',
+        color: '#606060',
+        paddingBottom: 5,
     },
 
     scoreText: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily: 'Marvin400'
+    },
+
+    friendIcon: {
+      paddingBottom: 5,
     },
 
     friends: {
@@ -166,19 +167,20 @@ const styles = StyleSheet.create({
 
     friendsText: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily: 'Marvin400',
     },
 
     circle: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: 100,
-        height: 100,
-        borderRadius: 100/2,
+        width: 120,
+        height: 120,
+        borderRadius: 120/2,
         borderWidth: 3,
         borderColor: 'black',
         marginLeft: 'auto',
         marginRight: 'auto',
+        borderColor: '#606060',
     },
 
     searchBar: {
