@@ -51,10 +51,10 @@ export default function LoginScreen({navigation}) {
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                  style={styles.loginButton}
+                  style={styles.loginButton2}
                   onPress={()=> {navigation.navigate('RegisterScreen')}}
                 >
-                    <Text style={styles.buttonText}>Register</Text>
+                    <Text style={styles.buttonText2}>Register</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -106,8 +106,24 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderRadius: 10,
         borderColor: '#1E064B',
+        backgroundColor: '#1E064B'
     },
     buttonText: {
+        fontSize: 25,
+        color: '#F5F7DC',
+    }
+    ,
+    loginButton2: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        height: 50,
+        width: 310,
+        borderWidth: 3,
+        borderRadius: 10,
+        borderColor: '#1E064B',
+    },
+    buttonText2: {
         fontSize: 25,
         color: '#1E064B',
     }

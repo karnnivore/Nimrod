@@ -8,9 +8,6 @@ import LoginStack from './routes/LoginStack';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from './app/components/context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { DrawerStackScreen } from './routes/DrawerNav';
-import {HomeScreen} from './app/components/Home';
-import {ActivityFeed} from './app/components/ActivityFeed';
 
 const AppIndex = createAppContainer(MainScreenNavigator);
 
