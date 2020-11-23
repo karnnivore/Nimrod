@@ -31,13 +31,13 @@ export default function Home() {
                 color='#606060'
                 // style={styles.circle}
             />
-            <Text style={styles.name}>John Smith <Icon name={'md-settings'} color={'grey'} size={15}/></Text>
-            <Text style={styles.username}>@johnsmith</Text>
+            <Text style={styles.name}>Nick Chinsen<Icon name={'md-settings'} color={'grey'} size={15}/></Text>
+            <Text style={styles.username}>@Karnnivore</Text>
             <Text style={styles.address}>Toronto, ON, Canada<Icon name={'md-settings'} color={'grey'} size={15}/></Text>
           </View>
           <View style={styles.scoreFriends}>
                 <View style={styles.circle}>
-                    <Text style={styles.scoreNum}>15</Text>
+                    <Text style={styles.scoreNum}>80</Text>
                     <Text style={styles.scoreText}>SCORE</Text>
                 </View>
                 <View style={styles.circle}>
