@@ -8,6 +8,7 @@ import LoginStack from './routes/LoginStack';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from './app/components/context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { BottomTabs } from './routes/BottomNav';
 
 const AppIndex = createAppContainer(MainScreenNavigator);
 
@@ -58,13 +59,13 @@ export default function App({navigation}) {
               barStyle='dark-content'
             />
             <View style={styles.header}>
-              <Icon name='ios-camera' size={28} color='#e0dad0'
+              {/*<Icon name='ios-camera' size={28} color='#e0dad0'
                 onPress={() => {}}
-              />
+              />*/}
               <Text style={styles.nimrodHeader}>NIMROD</Text>
-              <Icon name='ios-menu' size={28} color='#e0dad0'
+              {/*<Icon name='ios-menu' size={28} color='#e0dad0'
                 onPress={() => {}}
-              />
+              />>*/}
             </View>
             <MainScreenNavigator/>
           </View>
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     backgroundColor: '#948260',
     paddingHorizontal: 22,
     paddingTop: 30,

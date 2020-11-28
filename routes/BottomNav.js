@@ -1,3 +1,4 @@
+import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import HomeScreen from '../app/components/Home';
 import MapScreen from '../app/components/Map';
@@ -8,7 +9,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 function BottomTabs() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator initialRouteName="Home">
             <Tab.Screen name="Home" component={HomeScreen}/>
             <Tab.Screen name="Map" component={MapScreen}/>
             <Tab.Screen name="Quests" component={QuestScreen}/>
@@ -16,3 +17,5 @@ function BottomTabs() {
         </Tab.Navigator>
     )
 }
+
+export default BottomTabs;

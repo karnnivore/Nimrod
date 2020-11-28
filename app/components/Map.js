@@ -73,6 +73,7 @@ export default function Map() {
     )
 }
 
+
 Map.navigationOptions = {
     tabBarIcon:({tintColor, focused})=> (
         <Icon

@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     StyleSheet,
     Text,
     View,
     Button,
-    FlatList
+    FlatList,
+    Modal,
 } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
 //get navigation property and pass to Home function
 export default function Quests() {
+    const [show, changeShow] = useState(false);
     return (
       <View>
           <View style={styles.headerContainer}>
@@ -31,13 +35,35 @@ export default function Quests() {
                 {key: 'Task #5', location: 'Toronto', tags: '#truthordare'},
             ]}
             renderItem={({item}) =>
-                <View style={styles.activity}>
-                    <View style={styles.person}>
-                        <Text style={styles.key}>{item.key}</Text>
-                        <Text style={styles.location}>{item.location}</Text>
+            <View>
+                <TouchableOpacity onPress={()=>{changeShow(true)}}>
+                    <View style={styles.activity}>
+                        <View style={styles.person}>
+                            <Text style={styles.key}>{item.key}</Text>
+                            <Text style={styles.location}>{item.location}</Text>
+                        </View>
+                        <Text style={styles.tags}>{item.tags}</Text>
                     </View>
-                    <Text style={styles.tags}>{item.tags}</Text>
+                </TouchableOpacity>
+                <Modal transparent={true} visible={show} style={styles.modal}>
+                <View style={styles.popoutContainer}>
+                        <View style={styles.popout}>
+                            <Text style={styles.popoutName}>Nick Chinsen</Text>
+                        </View>
+                        <MapView
+                        provider={PROVIDER_GOOGLE}
+                        style={styles.map}
+                        region={{
+                        latitude: 43.6669058,
+                        longitude: -79.3953471,
+                        latitudeDelta: 0.05,
+                        longitudeDelta: 0.05
+                        }}>
+                        </MapView>
+                        <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
                 </View>
+                </Modal>
+            </View>
             }
           />
       </View>
@@ -139,5 +165,48 @@ const styles = StyleSheet.create({
     tags: {
         color: '#f09400',
         fontFamily: 'PointSoftDEMOSemiBold300'
+    },
+
+    popoutBackground: {
+        backgroundColor: 'black',
+    },
+
+    popoutContainer: {
+        flex:1,
+        flexDirection: 'column',
+        backgroundColor: '#d7ecd1',
+        alignItems: 'center',
+        minHeight: 100,
+        margin: 15,
+        padding: 15,
+        borderRadius: 14,
+    },
+
+    popout: {
+        backgroundColor: 'gray',
+        height: 50,
+    },
+    loginButton: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        height: 50,
+        width: 310,
+        borderWidth: 3,
+        borderRadius: 10,
+        borderColor: '#1E064B',
+        backgroundColor: '#1E064B'
+    },
+    map: {
+        position: 'absolute',
+        top: 280,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: 400,
+    },
+    buttonText: {
+        fontSize: 25,
+        color: '#F5F7DC',
     }
 });

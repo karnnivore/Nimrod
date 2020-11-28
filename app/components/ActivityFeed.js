@@ -41,7 +41,7 @@ export default function ActivityFeed() {
     )
 }
 
-//for icon on nav
+
 ActivityFeed.navigationOptions = {
     tabBarIcon:({tintColor, focused})=> (
         <Icon
