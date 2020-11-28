@@ -60,13 +60,6 @@ export default function Map() {
                     }}
                     title={'Fifth Quest'}
                 />
-                <Marker
-                    coordinate={{
-                        latitude: 43.678,
-                        longitude: -79.41,
-                    }}
-                    title={'Sixth Quest'}
-                />
             </MapView>
 
         </View>

@@ -28,11 +28,11 @@ export default function Quests() {
           <Text style={styles.questText}>CN TOWER</Text>
           <FlatList
             data={[
-                {key: 'Task #1', location: 'Toronto', tags: '#picture #task'},
-                {key: 'Task #2', location: 'Toronto', tags: '#6ix #findit'},
-                {key: 'Task #3', location: 'Toronto', tags: '#grabit'},
-                {key: 'Task #4', location: 'Toronto', tags: '#findabox'},
-                {key: 'Task #5', location: 'Toronto', tags: '#truthordare'},
+                {key: 'Task #1', location: 'Toronto', tags: '#picture #task', questType: 'Take a photo here', points: '10', rating: '4.5', latitude:43.6669058, longitude: -79.3953471},
+                {key: 'Task #2', location: 'Toronto', tags: '#6ix #findit', questType: 'Do 5 pushups', points: '10', rating: '4.5', latitude:43.69, longitude: -79.3953400},
+                {key: 'Task #3', location: 'Toronto', tags: '#grabit', questType: 'Do 5 squats', points: '10', rating: '4.5', latitude:43.66, longitude: -79.40},
+                {key: 'Task #4', location: 'Toronto', tags: '#findabox', questType: 'Do 5 jumping jacks', points: '10', rating: '4.5', latitude:43.678, longitude: -79.379},
+                {key: 'Task #5', location: 'Toronto', tags: '#truthordare', questType: 'Do a dance', points: '10', rating: '4.5', latitude:43.678, longitude: -79.39},
             ]}
             renderItem={({item}) =>
             <View>
@@ -48,19 +48,28 @@ export default function Quests() {
                 <Modal transparent={true} visible={show} style={styles.modal}>
                 <View style={styles.popoutContainer}>
                         <View style={styles.popout}>
-                            <Text style={styles.popoutName}>Nick Chinsen</Text>
+                            <Text>{item.key}</Text>
+                            <Text>{item.questType}</Text>
+                            <Text>{item.tags}</Text>
+                            <Text>{item.points}</Text>
+                            <Text>{item.rating}</Text>
+                            <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
                         </View>
                         <MapView
                         provider={PROVIDER_GOOGLE}
                         style={styles.map}
                         region={{
-                        latitude: 43.6669058,
-                        longitude: -79.3953471,
-                        latitudeDelta: 0.05,
-                        longitudeDelta: 0.05
+                        latitude: item.latitude,
+                        longitude: item.longitude,
+                        latitudeDelta: 0.02,
+                        longitudeDelta: 0.02
                         }}>
+                            <Marker
+                            coordinate={{latitude: item.latitude, longitude: item.longitude}}
+                            title={'Take a photo here'}
+                            />
                         </MapView>
-                        <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
+                        
                 </View>
                 </Modal>
             </View>
@@ -183,7 +192,6 @@ const styles = StyleSheet.create({
     },
 
     popout: {
-        backgroundColor: 'gray',
         height: 50,
     },
     loginButton: {
