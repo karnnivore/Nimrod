@@ -16,18 +16,18 @@ import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 export default function ActivityFeed() {
     const [show, changeShow] = useState(false);
     return (
-      <View>
+      <View style={{flex:1}}>
           <View style={styles.headerContainer}>
             <Text style={styles.header}>Activity Feed</Text>
             <Icon name={'md-people'} color={'#606060'} size={40} style={styles.icon}/>
           </View>
           <FlatList
             data={[
-                {key: 'Nick', location: 'Toronto', questStatus: 'Quest Completed', time:'5 MINS AGO', key: 'Task #1', location: 'Toronto', tags: '#picture #task', questType: 'Take a photo here', points: '10', rating: '4.5', latitude:43.6669058, longitude: -79.3953471},
-                {key: 'June', location: 'Ottawa', questStatus: 'Quest Completed', time:'15 MINS AGO', key: 'Task #2', location: 'Toronto', tags: '#6ix #findit', questType: 'Do 5 pushups', points: '10', rating: '4.5', latitude:43.69, longitude: -79.3953400},
-                {key: 'Max', location: 'Toronto', questStatus: 'Quest Completed', time:'23 MINS AGO', key: 'Task #3', location: 'Toronto', tags: '#grabit', questType: 'Do 5 squats', points: '10', rating: '4.5', latitude:43.66, longitude: -79.40},
-                {key: 'Kevin', location: 'Toronto', questStatus: 'Quest Completed', time:'30 MINS AGO', key: 'Task #4', location: 'Toronto', tags: '#findabox', questType: 'Do 5 jumping jacks', points: '10', rating: '4.5', latitude:43.678, longitude: -79.379},
-                {key: 'Georgina', location: 'Vancouver', questStatus: 'Quest Completed', time:'45 MINS AGO', key: 'Task #5', location: 'Toronto', tags: '#truthordare', questType: 'Do a dance', points: '10', rating: '4.5', latitude:43.678, longitude: -79.39},
+                {key: 'Nick', location: 'Toronto', questStatus: 'Quest Completed', time:'5 MINS AGO', questName: 'Task #1', tags: '#picture #task', questType: 'Take a photo here', points: '10', rating: '4.5', latitude:43.6669058, longitude: -79.3953471},
+                {key: 'June', location: 'Ottawa', questStatus: 'Quest Completed', time:'15 MINS AGO', questName: 'Task #2', tags: '#6ix #findit', questType: 'Do 5 pushups', points: '10', rating: '4.5', latitude:43.69, longitude: -79.3953400},
+                {key: 'Max', location: 'Toronto', questStatus: 'Quest Completed', time:'23 MINS AGO', questName: 'Task #3', tags: '#grabit', questType: 'Do 5 squats', points: '10', rating: '4.5', latitude:43.66, longitude: -79.40},
+                {key: 'Kevin', location: 'Toronto', questStatus: 'Quest Completed', time:'30 MINS AGO', questName: 'Task #4', tags: '#findabox', questType: 'Do 5 jumping jacks', points: '10', rating: '4.5', latitude:43.678, longitude: -79.379},
+                {key: 'Georgina', location: 'Vancouver', questStatus: 'Quest Completed', time:'45 MINS AGO', questName: 'Task #5', tags: '#truthordare', questType: 'Do a dance', points: '10', rating: '4.5', latitude:43.678, longitude: -79.39},
             ]}
             renderItem={({item}) =>/*
                 <View style={styles.activity}>
@@ -51,16 +51,15 @@ export default function ActivityFeed() {
                         </View>
                         <Text style={styles.time}>{item.time}</Text>
                     </View>
-                </TouchableOpacity>
-                <Modal transparent={true} visible={show} style={styles.modal}>
+                    <Modal transparent={true} visible={show} style={styles.modal}>
                 <View style={styles.popoutContainer}>
                         <View style={styles.popout}>
                             <Text>{item.key}</Text>
-                            <Text>{item.questType}</Text>
-                            <Text>{item.tags}</Text>
+                            <Text>{item.location}</Text>
+                            <Text>{item.questStatus} {item.time}</Text>
                             <Text>{item.points}</Text>
                             <Text>{item.rating}</Text>
-                            <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
+                            <Button title="Hide Task" onPress={()=>{changeShow(false)}}/>
                         </View>
                         <MapView
                         provider={PROVIDER_GOOGLE}
@@ -79,6 +78,8 @@ export default function ActivityFeed() {
                         
                 </View>
                 </Modal>
+                </TouchableOpacity>
+                
             </View>
             }
           />
@@ -164,5 +165,47 @@ const styles = StyleSheet.create({
         color: 'blue',
         fontFamily: 'BasierSquareRegular400',
         textDecorationLine: 'underline',
+    },
+
+    popoutBackground: {
+        backgroundColor: 'black',
+    },
+
+    popoutContainer: {
+        flex:1,
+        flexDirection: 'column',
+        backgroundColor: '#d7ecd1',
+        alignItems: 'center',
+        minHeight: 100,
+        margin: 15,
+        padding: 15,
+        borderRadius: 14,
+    },
+
+    popout: {
+        height: 50,
+    },
+    loginButton: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        height: 50,
+        width: 310,
+        borderWidth: 3,
+        borderRadius: 10,
+        borderColor: '#1E064B',
+        backgroundColor: '#1E064B'
+    },
+    map: {
+        position: 'absolute',
+        top: 280,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: 400,
+    },
+    buttonText: {
+        fontSize: 25,
+        color: '#F5F7DC',
     }
 });

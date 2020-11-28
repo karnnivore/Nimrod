@@ -15,7 +15,7 @@ import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 export default function Quests() {
     const [show, changeShow] = useState(false);
     return (
-      <View>
+      <View style={{flex:1}}>
           <View style={styles.headerContainer}>
             <Text style={styles.header}>Quests Page</Text>
             <View style={styles.headerLocation}>
@@ -32,7 +32,7 @@ export default function Quests() {
                 {key: 'Task #2', location: 'Toronto', tags: '#6ix #findit', questType: 'Do 5 pushups', points: '10', rating: '4.5', latitude:43.69, longitude: -79.3953400},
                 {key: 'Task #3', location: 'Toronto', tags: '#grabit', questType: 'Do 5 squats', points: '10', rating: '4.5', latitude:43.66, longitude: -79.40},
                 {key: 'Task #4', location: 'Toronto', tags: '#findabox', questType: 'Do 5 jumping jacks', points: '10', rating: '4.5', latitude:43.678, longitude: -79.379},
-                {key: 'Task #5', location: 'Toronto', tags: '#truthordare', questType: 'Do a dance', points: '10', rating: '4.5', latitude:43.678, longitude: -79.39},
+                {key: 'Task #5', location: 'Toronto', tags: '#truthordare', questType: 'Do a dance', points: '10', rating: '4.5', latitude:43.678, longitude: -79.39}
             ]}
             renderItem={({item}) =>
             <View>
