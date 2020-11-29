@@ -31,21 +31,45 @@ export default function Home({navigation}) {
                 color='#606060'
                 // style={styles.circle}
             />
-            <Text style={styles.name}>Nick Chinsen<Icon name={'md-settings'} color={'grey'} size={15}/></Text>
+            
+            <Text style={styles.name}>Nick Chinsen
+                <TouchableOpacity
+                    onPress={()=>navigation.navigate('Settings')}
+                >
+                    <Icon name={'md-settings'} color={'grey'} size={15}/>
+                </TouchableOpacity>
+            </Text>
             <Text style={styles.username}>@Karnnivore</Text>
-            <Text style={styles.address}>Toronto, ON, Canada<Icon name={'md-settings'} color={'grey'} size={15}/></Text>
+            <Text style={styles.address}>Toronto, ON, Canada
+                <TouchableOpacity
+                    onPress={()=>navigation.navigate('Settings')}
+                >
+                    <Icon name={'md-settings'} color={'grey'} size={15}/>
+                </TouchableOpacity>
+            </Text>
           </View>
           <View style={styles.scoreFriends}>
+                <TouchableOpacity style={styles.circle}
+                    onPress={()=> {navigation.navigate('CompletedQuests')}}
+                >
                 <View style={styles.circle}>
                     <Text style={styles.scoreNum}>80</Text>
                     <Text style={styles.scoreText}>SCORE</Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.circle}
+                    onPress={()=> {navigation.navigate('CompletedQuests')}}
+                >
                 <View style={styles.circle}>
                     <Icon name={'md-people'} color={'#606060'} size={40} style={styles.friendIcon}/>
                     <Text style={styles.friendsText}>Friends</Text>
                 </View>
+                </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.completedQuestsButton}>
+            <TouchableOpacity 
+                style={styles.completedQuestsButton}
+                onPress={()=> {navigation.navigate('CompletedQuests')}}
+            >
                 <View style={styles.questButton}>
                     <Icon name={'md-bookmarks'} color={'#606060'} size={40} style={styles.searchIcon}/>
                     <Text style={styles.questsText}>Completed Quests</Text>

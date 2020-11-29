@@ -1,12 +1,25 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../app/components/Home';
 import MapScreen from '../app/components/Map';
 import QuestScreen from '../app/components/Quests';
+import EditProfile from '../app/components/EditProfile';
+import CompletedQuestScreen from '../app/components/CompletedQuests';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ActivityScreen from '../app/components/ActivityFeed';
 
 const Tab = createMaterialBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function StackRoutes() {
+    return (
+      <Stack.Navigator initialRouteName="Home" headerMode='none'>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Settings" component={EditProfile} />
+      </Stack.Navigator>
+    );
+}
 
 function BottomTabs() {
     return (/*
@@ -18,16 +31,26 @@ function BottomTabs() {
         </Tab.Navigator>*/
         <Tab.Navigator
         initialRouteName="Home"
-        activeColor="#e91e63"
+        activeColor="white"
         style={{ backgroundColor: 'tomato' }}
         >
         <Tab.Screen
           name="Profile"
-          component={HomeScreen}
+          component={StackRoutes}
           options={{
             tabBarLabel: 'Profile',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="account" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="CompletedQuests"
+          component={CompletedQuestScreen}
+          options={{
+            tabBarLabel: 'Completed',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="check-circle" color={color} size={26} />
             ),
           }}
         />
@@ -42,22 +65,22 @@ function BottomTabs() {
           }}
         />
         <Tab.Screen
-          name="Map"
-          component={MapScreen}
-          options={{
-            tabBarLabel: 'Map',
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="map" color={color} size={26} />
-            ),
-          }}
-        />
-        <Tab.Screen
           name="Feed"
           component={ActivityScreen}
           options={{
             tabBarLabel: 'Feed',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="nature-people" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Map"
+          component={MapScreen}
+          options={{
+            tabBarLabel: 'Map',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="map" color={color} size={26} />
             ),
           }}
         />

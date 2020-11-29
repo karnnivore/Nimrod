@@ -10,7 +10,7 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
-import Camera from './Camera';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 //get navigation property and pass to Home function
 export default function Quests({navigation}) {
@@ -18,7 +18,7 @@ export default function Quests({navigation}) {
     return (
       <View style={{flex:1}}>
           <View style={styles.headerContainer}>
-            <Text style={styles.header}>Quests Page</Text>
+            <Text style={styles.header}>Completed</Text>
             <View style={styles.headerLocation}>
                 <Icon name={'md-bookmarks'} color={'#606060'} size={40} style={styles.icon}/>
                 <TouchableOpacity onPress={()=> {navigation.navigate('Map')}}>
@@ -28,7 +28,7 @@ export default function Quests({navigation}) {
             </View>
           </View>
           <Text style={styles.line}>────────────────────────────────────</Text>
-          <Text style={styles.questText}>CN TOWER</Text>
+          <Text style={styles.questText}>Casa Loma                     Score: 80</Text>
           <FlatList
             data={[
                 {key: 'Task #1', location: 'Toronto', tags: '#picture #task', questType: 'Take a photo here', points: '10', rating: '4.5', latitude:43.6669058, longitude: -79.3953471},
@@ -58,7 +58,7 @@ export default function Quests({navigation}) {
                             <Text>{item.tags}</Text>
                             <Text>{item.points}</Text>
                             <Text>{item.rating}</Text>
-                            <Button title="Take Picture" onPress={()=>{}}/>
+                            <MaterialCommunityIcons name="drawing" color={'black'} size={26} />
                             <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
                         </View>
                         <MapView
