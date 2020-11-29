@@ -15,18 +15,65 @@ const AppIndex = createAppContainer(MainScreenNavigator);
 const Drawer = createDrawerNavigator();
 
 export default function App({navigation}) {
-  const [loading, setLoading] = React.useState(true);
-  const [user, setUser] = React.useState(null);
+  // const [loading, setLoading] = React.useState(true);
+  // const [user, setUser] = React.useState(null);
 
+  const initialLoginState = {
+    isLoading: true,
+    userName: null,
+    userToken: null,
+  }
+
+  const loginReducer = (previousState, action) => {
+    switch( action.type ){
+      case 'RETRIEVE_TOKEN':
+        return {
+          ...previousState,
+          userToken: action.token,
+          isLoading: false,
+        };
+      case 'SIGNIN':
+        return {
+          ...previousState,
+          userName: action.id,
+          userToken: action.token,
+          isLoading: false,
+        };
+      case 'LOGOUT':
+        return {
+          ...previousState,
+          userName: null,
+          userToken: null,
+          isLoading: false,
+        };
+      case 'REGISTER':
+        return {
+          ...previousState,
+          userName: action.id,
+          userToken: action.token,
+          isLoading: false,
+        };
+    }
+  }
+
+  //create the reducer
+  const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
   //define login/register functions for state
   const authContext = React.useMemo(() => ({
-    login: () => {
-      setUser('abcd')
-      setLoading(false)
+    login: (username, password) => {
+      // setUser('abcd')
+      // setLoading(false)
+      let userToken;
+      if(username == 'user' && password == 'pass'){
+        userToken = 'osjfie';
+      }
+      console.log('User token: ', userToken)
+      dispatch({ type: 'SIGNIN', id: username, token: userToken})
     },
     logout: () => {
-      setUser(null)
-      setLoading(false)
+      // setUser(null)
+      // setLoading(false)
+      dispatch({ type: 'LOGOUT'})
     },
     register: () => {
       setUser('abcd')
@@ -36,11 +83,15 @@ export default function App({navigation}) {
   //after short delay display landing page
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
+      //setLoading(false);
+      let userToken;
+      userToken = 'gijesief'
+      console.log('User token: ', userToken)
+      dispatch({ type: 'REGISTER', token: 'gijesief'})
     }, 1000);
   }, []);
 
-  if( loading ){
+  if( loginState.isLoading ){
     return(
       <View>
         <ActivityIndicator size='large'/>
@@ -50,7 +101,7 @@ export default function App({navigation}) {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        { user != null ? (
+        { loginState.userToken != null ? (
           <View style={styles.container}>
             <StatusBar
               backgroundColor='#e0dad0'

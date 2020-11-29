@@ -13,11 +13,50 @@ import { AuthContext } from '../app/components/context';
 
 export default function LoginScreen({navigation}) {
     //state for email & password
-    const [text, onChangeText] = React.useState('');
+    const [data, setData] = React.useState({
+        username: '',
+        password: '',
+        check_textInputChange: false,
+        secureTextEntry: true,
+    });
 
     //contextname
     const { login } = React.useContext(AuthContext)
 
+    const inputChange = (input) => {
+        if ( input.length != 0) {
+            setData({
+                ...data,
+                username: input,
+                check_textInputChange: true
+            })
+        } else {
+            setData({
+                ...data,
+                username: input,
+                check_textInputChange: false
+            })
+        }
+    }
+
+    const passwordChange = (val) => {
+        setData({
+            ...data,
+            password: val
+        })
+    }
+
+    const changeSecureTextEntry = () => {
+        setData({
+            ...data,
+            secureTextEntry: !data.secureTextEntry
+        })
+    }
+
+    const loginHandler = (username, password) => {
+        //pass username and pass word to login function app.js
+        login(username, password);
+    }
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -30,8 +69,7 @@ export default function LoginScreen({navigation}) {
                     <TextInput
                     style={styles.textInput}
                     placeholder="Enter Email"
-                    onChangeText={text => onChangeText(text)}
-                    onFocus={text => onChangeText('')}
+                    onChangeText={text => inputChange(text)}
                     />
                 </View>
                 <Text>Password</Text>
@@ -40,13 +78,13 @@ export default function LoginScreen({navigation}) {
                     <TextInput
                     style={styles.textInput}
                     placeholder="Enter Password"
-                    onChangeText={text => onChangeText(text)}
-                    onFocus={text => onChangeText('')}
+                    onChangeText={text => passwordChange(text)}
+                    secureTextEntry={data.secureTextEntry ? true : false}
                     />
                 </View>
                 <TouchableOpacity 
                   style={styles.loginButton}
-                  onPress={()=> {login()}}
+                  onPress={()=> {loginHandler(data.username, data.password)}}
                 >
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
