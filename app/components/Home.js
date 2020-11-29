@@ -14,7 +14,7 @@ import { AuthContext } from './context';
 export default function Home() {
     const [value, onChangeText] = React.useState('Search...');
 
-    const { signOut } = React.useContext(AuthContext);
+    const { logout } = React.useContext(AuthContext);
 
     return (
       <View>
@@ -56,7 +56,7 @@ export default function Home() {
             <View style={styles.logoutContainer}>
                 <TouchableOpacity 
                     style={styles.logoutButton}
-                    onPress={()=> {}}
+                    onPress={()=> {logout()}}
                 >
                     <Text style={styles.buttonText}>Logout</Text>
                 </TouchableOpacity>

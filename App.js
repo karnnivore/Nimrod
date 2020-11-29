@@ -32,9 +32,7 @@ export default function App({navigation}) {
       setUser('abcd')
       setLoading(false)
     },
-  })
-
-  );
+  }), []);
   //after short delay display landing page
   useEffect(() => {
     setTimeout(() => {
