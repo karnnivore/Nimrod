@@ -8,9 +8,11 @@ import {
     TextInput
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AuthContext } from '../app/components/context';
 
 export default function RegisterScreen({navigation}) {
     const [text, onChangeText] = React.useState('');
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -59,7 +61,7 @@ export default function RegisterScreen({navigation}) {
                 </View>
                 <TouchableOpacity 
                   style={styles.loginButton}
-                  onPress={()=> {navigation.navigate('RegisterScreen')}}
+                  onPress={()=> {register(email, firstName, lastName, password)}}
                 >
                     <Text style={styles.buttonText}>Register</Text>
                 </TouchableOpacity>
