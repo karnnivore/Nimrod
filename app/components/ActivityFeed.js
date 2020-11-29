@@ -21,6 +21,7 @@ export default function ActivityFeed({navigation}) {
             <Text style={styles.header}>Activity Feed</Text>
             <Icon name={'md-people'} color={'#606060'} size={40} style={styles.icon}/>
           </View>
+          <Text style={styles.line}>────────────────────────────────────</Text>
           <FlatList
             data={[
                 {key: 'Nick', location: 'Toronto', questStatus: 'Quest Completed', time:'5 MINS AGO', questName: 'Task #1', tags: '#picture #task', questType: 'Take a photo here', points: '10', rating: '4.5', latitude:43.6669058, longitude: -79.3953471},
@@ -54,11 +55,11 @@ export default function ActivityFeed({navigation}) {
                     <Modal transparent={true} visible={show} style={styles.modal}>
                 <View style={styles.popoutContainer}>
                         <View style={styles.popout}>
-                            <Text>{item.key}</Text>
-                            <Text>{item.location}</Text>
-                            <Text>{item.questStatus} {item.time}</Text>
-                            <Text>{item.points}</Text>
-                            <Text>{item.rating}</Text>
+                            <Text style={styles.popoutText}>Name: {item.key}</Text>
+                            <Text style={styles.popoutText}>Location: {item.location}</Text>
+                            <Text style={styles.popoutText}>Status: {item.questStatus} {item.time}</Text>
+                            <Text style={styles.popoutText}>Points: {item.points}</Text>
+                            <Text style={styles.popoutText}>Rating: {item.rating}</Text>
                             <Button title="Hide Task" onPress={()=>{changeShow(false)}}/>
                         </View>
                         <MapView
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: '#eeeeee',
+        backgroundColor: '#590c4e',
         minHeight: 100,
         margin: 10,
         padding: 20,
@@ -183,7 +184,16 @@ const styles = StyleSheet.create({
     },
 
     popout: {
-        height: 50,
+        flex:1,
+        width: '100%',
+    },
+
+    popoutText: {
+        marginLeft: 20,
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: 'black',
+        marginBottom: 10,
     },
     loginButton: {
         justifyContent: 'center',
@@ -207,5 +217,11 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 25,
         color: '#F5F7DC',
-    }
+    },
+    line: {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        color: '#d3d3d3',
+        fontWeight: 'bold',
+    },
 });

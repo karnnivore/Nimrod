@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     activity: {
         flex:1,
         flexDirection: 'row',
-        backgroundColor: '#d7ecd1',
+        backgroundColor: '#62bf8a',
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 100,

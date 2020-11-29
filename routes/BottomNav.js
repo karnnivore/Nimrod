@@ -32,7 +32,6 @@ function BottomTabs() {
         <Tab.Navigator
         initialRouteName="Home"
         activeColor="white"
-        style={{ backgroundColor: 'tomato' }}
         >
         <Tab.Screen
           name="Profile"
@@ -42,6 +41,7 @@ function BottomTabs() {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="account" color={color} size={26} />
             ),
+            tabBarColor: 'blue',
           }}
         />
         <Tab.Screen
@@ -52,6 +52,7 @@ function BottomTabs() {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="check-circle" color={color} size={26} />
             ),
+            tabBarColor: 'green',
           }}
         />
         <Tab.Screen
@@ -62,6 +63,7 @@ function BottomTabs() {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="bell" color={color} size={26} />
             ),
+            tabBarColor: '#cc5a02',
           }}
         />
         <Tab.Screen
@@ -72,6 +74,7 @@ function BottomTabs() {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="nature-people" color={color} size={26} />
             ),
+            tabBarColor: '#62068c',
           }}
         />
         <Tab.Screen
@@ -82,6 +85,7 @@ function BottomTabs() {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="map" color={color} size={26} />
             ),
+            tabBarColor: '#007de3',
           }}
         />
         </Tab.Navigator>

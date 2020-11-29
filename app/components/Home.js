@@ -58,7 +58,7 @@ export default function Home({navigation}) {
                 </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.circle}
-                    onPress={()=> {navigation.navigate('CompletedQuests')}}
+                    onPress={()=> {navigation.navigate('Feed')}}
                 >
                 <View style={styles.circle}>
                     <Icon name={'md-people'} color={'#606060'} size={40} style={styles.friendIcon}/>

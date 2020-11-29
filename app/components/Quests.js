@@ -53,11 +53,11 @@ export default function Quests({navigation}) {
                 <Modal transparent={true} visible={show} style={styles.modal}>
                 <View style={styles.popoutContainer}>
                         <View style={styles.popout}>
-                            <Text>{item.key}</Text>
-                            <Text>{item.questType}</Text>
-                            <Text>{item.tags}</Text>
-                            <Text>{item.points}</Text>
-                            <Text>{item.rating}</Text>
+                            <Text style={styles.popoutText}>Quest: {item.key}</Text>
+                            <Text style={styles.popoutText}>Type: {item.questType}</Text>
+                            <Text style={styles.popoutText}>Tags: {item.tags}</Text>
+                            <Text style={styles.popoutText}>Points: {item.points}</Text>
+                            <Text style={styles.popoutText}>Rating: {item.rating}</Text>
                             <Button title="Take Picture" onPress={()=>{}}/>
                             <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
                         </View>
@@ -198,8 +198,18 @@ const styles = StyleSheet.create({
     },
 
     popout: {
-        height: 50,
+        flex:1,
+        width: '100%',
     },
+
+    popoutText: {
+        marginLeft: 20,
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: 'black',
+        marginBottom: 10,
+    },
+
     loginButton: {
         justifyContent: 'center',
         alignItems: 'center',
