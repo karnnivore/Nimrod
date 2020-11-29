@@ -6,12 +6,11 @@ import { StatusBar } from 'expo-status-bar';
 import LoginStack from './routes/LoginStack';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from './app/components/context';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { AsyncStorage } from '@react-native-community/async-storage';
+import BottomTabs from './routes/BottomNav';
 
 const AppIndex = createAppContainer(MainScreenNavigator);
 
-const Drawer = createDrawerNavigator();
 
 export default function App({navigation}) {
   // const [loading, setLoading] = React.useState(true);
@@ -127,7 +126,7 @@ export default function App({navigation}) {
                 onPress={() => {}}
               />>*/}
             </View>
-            <MainScreenNavigator/>
+            <BottomTabs/>
           </View>
         )
         :

@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { AuthContext } from './context';
 
 //get navigation property and pass to Home function
-export default function Home() {
+export default function Home({navigation}) {
     const [value, onChangeText] = React.useState('Search...');
 
     const { logout } = React.useContext(AuthContext);

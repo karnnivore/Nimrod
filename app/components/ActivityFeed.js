@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
 //get navigation property and pass to Home function
-export default function ActivityFeed() {
+export default function ActivityFeed({navigation}) {
     const [show, changeShow] = useState(false);
     return (
       <View style={{flex:1}}>

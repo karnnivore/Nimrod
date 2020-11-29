@@ -13,7 +13,7 @@ import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import Camera from './Camera';
 
 //get navigation property and pass to Home function
-export default function Quests() {
+export default function Quests({navigation}) {
     const [show, changeShow] = useState(false);
     return (
       <View style={{flex:1}}>

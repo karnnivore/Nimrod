@@ -8,7 +8,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
-export default function Map() {
+export default function Map({navigation}) {
     return (
         <View>
             <View style={styles.headerContainer}>
