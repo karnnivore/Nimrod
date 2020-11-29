@@ -10,6 +10,7 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+import Camera from './Camera';
 
 //get navigation property and pass to Home function
 export default function Quests() {
@@ -55,6 +56,7 @@ export default function Quests() {
                             <Text>{item.tags}</Text>
                             <Text>{item.points}</Text>
                             <Text>{item.rating}</Text>
+                            <Button title="Take Picture" onPress={()=>{}}/>
                             <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
                         </View>
                         <MapView
