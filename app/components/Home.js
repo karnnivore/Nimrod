@@ -45,14 +45,12 @@ export default function Home() {
                     <Text style={styles.friendsText}>Friends</Text>
                 </View>
             </View>
-            <View style={styles.searchBar}>
-                <TextInput
-                  style={styles.search}
-                  onChangeText={text => onChangeText(text)}
-                  value={value}
-                />
-                <Icon name={'md-people'} color={'#606060'} size={40} style={styles.searchIcon}/>
-            </View>
+            <TouchableOpacity style={styles.completedQuestsButton}>
+                <View style={styles.questButton}>
+                    <Icon name={'md-bookmarks'} color={'#606060'} size={40} style={styles.searchIcon}/>
+                    <Text style={styles.questsText}>Completed Quests</Text>
+                </View>
+            </TouchableOpacity>
             <View style={styles.logoutContainer}>
                 <TouchableOpacity 
                     style={styles.logoutButton}
@@ -191,11 +189,6 @@ const styles = StyleSheet.create({
         borderColor: '#606060',
     },
 
-    searchBar: {
-        flexDirection: 'row',
-        marginTop: 30,
-    },
-
     search: {
         flex:1,
         height: 50,
@@ -230,5 +223,28 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         color: '#1E064B',
+    },
+
+    questButton: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        height: 50,
+        width: 310,
+        borderWidth: 3,
+        borderRadius: 10,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+
+    completedQuestsButton: {
+        alignItems: 'center', 
+        justifyContent: 'center',
+    },
+
+    questsText: {
+        fontSize: 20, 
+        fontWeight: 'bold'
     }
 });
