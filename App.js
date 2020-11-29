@@ -3,12 +3,11 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import MainScreenNavigator from './routes/Router';
 import { createAppContainer } from 'react-navigation';
 import { StatusBar } from 'expo-status-bar';
-import Icon from 'react-native-vector-icons/Ionicons';
 import LoginStack from './routes/LoginStack';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from './app/components/context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { BottomTabs } from './routes/BottomNav';
+import { AsyncStorage } from '@react-native-community/async-storage';
 
 const AppIndex = createAppContainer(MainScreenNavigator);
 
@@ -60,19 +59,27 @@ export default function App({navigation}) {
   const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
   //define login/register functions for state
   const authContext = React.useMemo(() => ({
-    login: (username, password) => {
+    login: async(username, password) => {
       // setUser('abcd')
       // setLoading(false)
       let userToken;
       if(username == 'user' && password == 'pass'){
-        userToken = 'osjfie';
+        try {
+          userToken = 'osjfie';
+          await AsyncStorage.setItem('userToken', userToken)
+        } catch(e) {
+          console.log(e);
+        }
       }
       console.log('User token: ', userToken)
       dispatch({ type: 'SIGNIN', id: username, token: userToken})
     },
-    logout: () => {
-      // setUser(null)
-      // setLoading(false)
+    logout: async() => {
+      try {
+        await AsyncStorage.removeItem('userToken')
+      } catch(e) {
+        console.log(e);
+      }
       dispatch({ type: 'LOGOUT'})
     },
     register: () => {
@@ -82,11 +89,15 @@ export default function App({navigation}) {
   }), []);
   //after short delay display landing page
   useEffect(() => {
-    setTimeout(() => {
+    setTimeout(async() => {
       //setLoading(false);
       let userToken;
-      userToken = 'gijesief'
-      console.log('User token: ', userToken)
+      userToken = null;
+      try { //to get user from async storage
+        userToken = await AsyncStorage.getItem('userToken')
+      } catch(e) {
+        console.log(e);
+      }
       dispatch({ type: 'REGISTER', token: 'gijesief'})
     }, 1000);
   }, []);
