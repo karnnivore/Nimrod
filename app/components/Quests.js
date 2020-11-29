@@ -40,7 +40,9 @@ export default function Quests() {
                     <View style={styles.activity}>
                         <View style={styles.person}>
                             <Text style={styles.key}>{item.key}</Text>
-                            <Text style={styles.location}>{item.location}</Text>
+                            <TouchableOpacity onPress={() => {}}>
+                                <Text style={styles.location}>{item.location}</Text>
+                            </TouchableOpacity>
                         </View>
                         <Text style={styles.tags}>{item.tags}</Text>
                     </View>
