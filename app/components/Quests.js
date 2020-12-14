@@ -58,6 +58,7 @@ export default function Quests({navigation}) {
                             <Text style={styles.popoutText}>Tags: {item.tags}</Text>
                             <Text style={styles.popoutText}>Points: {item.points}</Text>
                             <Text style={styles.popoutText}>Rating: {item.rating}</Text>
+                            {/*Should link to Camera.js through button click*/}
                             <Button title="Take Picture" onPress={()=>{}}/>
                             <Button title="Hide Quest" onPress={()=>{changeShow(false)}}/>
                         </View>

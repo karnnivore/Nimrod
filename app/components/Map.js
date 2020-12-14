@@ -9,6 +9,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
 export default function Map({navigation}) {
+    const state = {
+        latitude: null,
+        longitude: null,
+        error: null,
+    }
+    
     return (
         <View>
             <View style={styles.headerContainer}>
