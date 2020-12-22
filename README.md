@@ -1,3 +1,3 @@
-# Nimrod
-## React Native Android Application
-### Nick Chinsen, Jun-Yan Gan, Joel Abramson, Kevin Silva
+# Project Nimrod
+Mobile Application Development - COMP3074 in Computer Science at George Brown College
+Final Project using React Native
